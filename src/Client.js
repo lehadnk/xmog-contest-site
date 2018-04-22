@@ -3,7 +3,7 @@ import mime from 'rest/interceptor/mime';
 
 class Client {
     constructor() {
-        this.back_url = "http://185.17.9.43:9000";
+        this.back_url = "http://52.88.164.23:9000";
         this.client = rest.wrap(mime);
     }
 
