@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Participant from './Participant';
 import Client from './Client';
+import Grid from 'material-ui/Grid';
 
 class ParticipantsList extends Component {
     constructor(props) {
@@ -24,12 +25,25 @@ class ParticipantsList extends Component {
     }
 
     render() {
+        let i, j, temparray, chunk = 3;
+        let participants = [];
+        for (i = 0, j = this.state.participants.length; i < j; i += chunk) {
+            temparray = this.state.participants.slice(i, i + chunk);
+            participants.push(temparray);
+        }
+
         return (
-                <div>
-                    {this.state.participants.map(participant => (
-                        <Participant participant={participant} key={participant.id} />
+            <div>
+                {participants.map(chunk => (
+                    <Grid container spacing={24}>
+                    {chunk.map(participant => (
+                        <Grid item xs={4}>
+                            <Participant participant={participant} key={participant.id} />
+                        </Grid>
                     ))}
-                </div>
+                    </Grid>
+                ))}
+            </div>
         );
     }
 }

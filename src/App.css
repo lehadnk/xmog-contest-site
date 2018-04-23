@@ -22,6 +22,16 @@
   font-size: large;
 }
 
+.participant-img {
+  max-height: 300px;
+  max-width: -webkit-fill-available;
+}
+
+.img-container {
+  padding: 10px 10px;
+  height: 320px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
