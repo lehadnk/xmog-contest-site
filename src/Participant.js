@@ -64,7 +64,7 @@ class Participant extends Component {
         return (
             <Card>
                 <div className="img-container">
-                    <a href={this.props.participant.image_url}>
+                    <a href={this.props.participant.image_url} target="_blank">
                         <img className="participant-img" src={this.props.participant.image_url} title={this.props.participant.name} />
                     </a>
                 </div>
