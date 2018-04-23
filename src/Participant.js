@@ -36,7 +36,7 @@ class Participant extends Component {
         return (
             <ExpansionPanel onChange={() => {this.expand()}} >
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography>{this.props.participant.name} ({this.props.participant.votes})</Typography>
+                    <Typography>{this.props.participant.name}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <List dense={true}>
