@@ -37,7 +37,7 @@ class ParticipantsList extends Component {
                 {participants.map(chunk => (
                     <Grid container spacing={24}>
                     {chunk.map(participant => (
-                        <Grid item xs={4}>
+                        <Grid item xs={12} lg={4}>
                             <Participant participant={participant} key={participant.id} />
                         </Grid>
                     ))}
