@@ -9,33 +9,6 @@ import Client from './Client';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 
-const styles = theme => ({
-    card: {
-        display: 'flex',
-    },
-    details: {
-        display: 'flex',
-        flexDirection: 'column',
-    },
-    content: {
-        flex: '1 0 auto',
-    },
-    cover: {
-        width: 151,
-        height: 151,
-    },
-    controls: {
-        display: 'flex',
-        alignItems: 'center',
-        paddingLeft: theme.spacing.unit,
-        paddingBottom: theme.spacing.unit,
-    },
-    playIcon: {
-        height: 38,
-        width: 38,
-    },
-});
-
 class Participant extends Component {
     constructor(props) {
         super(props);
@@ -74,21 +47,21 @@ class Participant extends Component {
                 </Typography>
 
                 <CardContent>
-                    <ExpansionPanel onChange={() => {this.expand()}} >
-                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                            <Typography>Проголосовали</Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
+                    {/*<ExpansionPanel onChange={() => {this.expand()}} >*/}
+                        {/*<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>*/}
+                            {/*<Typography>Проголосовали</Typography>*/}
+                        {/*</ExpansionPanelSummary>*/}
+                        {/*<ExpansionPanelDetails>*/}
 
-                            <List dense={true}>
-                                {this.state.voters.map(voter => (
-                                    <ListItem>
-                                        <ListItemText primary={voter.discord_name} />
-                                    </ListItem>
-                                ))}
-                            </List>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
+                            {/*/!*<List dense={true}>*!/*/}
+                                {/*/!*{this.state.voters.map(voter => (*!/*/}
+                                    {/*/!*<ListItem>*!/*/}
+                                        {/*/!*<ListItemText primary={voter.discord_name} />*!/*/}
+                                    {/*/!*</ListItem>*!/*/}
+                                {/*/!*))}*!/*/}
+                            {/*/!*</List>*!/*/}
+                        {/*</ExpansionPanelDetails>*/}
+                    {/*</ExpansionPanel>*/}
                 </CardContent>
             </Card>
         );

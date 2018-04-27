@@ -40,11 +40,11 @@ class App extends Component {
                     <AppBar position="static">
                         <Tabs value={this.state.value} onChange={this.handleChange}>
                             <Tab label="Участники" />
-                            <Tab label="Проголосовавшие" />
+                            {/*<Tab label="Проголосовавшие" />*/}
                         </Tabs>
                     </AppBar>
                     {this.state.value === 0 && <TabContainer><ParticipantsList /></TabContainer>}
-                    {this.state.value === 1 && <TabContainer><VotersList /></TabContainer>}
+                    {/*{this.state.value === 1 && <TabContainer><VotersList /></TabContainer>}*/}
                 </div>
             </div>
         );
