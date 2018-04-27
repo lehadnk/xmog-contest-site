@@ -47,21 +47,21 @@ class Participant extends Component {
                 </Typography>
 
                 <CardContent>
-                    {/*<ExpansionPanel onChange={() => {this.expand()}} >*/}
-                        {/*<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>*/}
-                            {/*<Typography>Проголосовали</Typography>*/}
-                        {/*</ExpansionPanelSummary>*/}
-                        {/*<ExpansionPanelDetails>*/}
+                    <ExpansionPanel onChange={() => {this.expand()}} >
+                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography>Проголосовали ({this.props.participant.votes})</Typography>
+                        </ExpansionPanelSummary>
+                        <ExpansionPanelDetails>
 
-                            {/*/!*<List dense={true}>*!/*/}
-                                {/*/!*{this.state.voters.map(voter => (*!/*/}
-                                    {/*/!*<ListItem>*!/*/}
-                                        {/*/!*<ListItemText primary={voter.discord_name} />*!/*/}
-                                    {/*/!*</ListItem>*!/*/}
-                                {/*/!*))}*!/*/}
-                            {/*/!*</List>*!/*/}
-                        {/*</ExpansionPanelDetails>*/}
-                    {/*</ExpansionPanel>*/}
+                            <List dense={true}>
+                                {this.state.voters.map(voter => (
+                                    <ListItem>
+                                        <ListItemText primary={voter.discord_name} />
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </ExpansionPanelDetails>
+                    </ExpansionPanel>
                 </CardContent>
             </Card>
         );
