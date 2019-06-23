@@ -37,8 +37,8 @@ class Participant extends Component {
         return (
             <Card>
                 <div className="img-container">
-                    <a href={this.props.participant.image_url} target="_blank">
-                        <img className="participant-img" src={this.props.participant.image_url} title={this.props.participant.name} />
+                    <a href={this.props.participant.imageUrl} target="_blank">
+                        <img className="participant-img" src={this.props.participant.imageUrl} title={this.props.participant.name} />
                     </a>
                 </div>
 
@@ -56,7 +56,7 @@ class Participant extends Component {
                             <List dense={true}>
                                 {this.state.voters.map(voter => (
                                     <ListItem>
-                                        <ListItemText primary={voter.discord_name} />
+                                        <ListItemText primary={<Typography type="body2" style={{ color: voter.disqualified ? '#FF0000' : '#000000' }}>{voter.voter_discord_name}</Typography>} disableTypography />
                                     </ListItem>
                                 ))}
                             </List>

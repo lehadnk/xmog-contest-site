@@ -42,7 +42,7 @@ class Voter extends Component {
                     <List dense={true}>
                         {this.state.participants.map(participant => (
                             <ListItem>
-                                <ListItemText primary={participant.name} />
+                                <ListItemText disableTypography primary={<Typography type="body2" style={{ color: '#FFFFFF' }}>{participant.name}</Typography>} color={"#00000AA"} />
                             </ListItem>
                         ))}
                     </List>
