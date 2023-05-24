@@ -34,7 +34,7 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     {/*<img src={logo} className="App-logo" alt="logo" />*/}
-                    <h1 className="App-title">Участники конкурса трансмогов - Июнь 2019</h1>
+                    <h1 className="App-title">Участники конкурса трансмогов - 2023</h1>
                 </header>
                 <div>
                     <AppBar position="static">
