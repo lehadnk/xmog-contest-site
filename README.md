@@ -1,8 +1,9 @@
 # Docker
 
+#### In src/Client.js specify a valid backend URL
+
 `docker-compose down && docker-compose up -d`
 
-### In src/Client.js specify a valid backend URL 
 
 ## Garbage below
 
