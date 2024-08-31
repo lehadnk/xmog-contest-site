@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: transmog-frontend
+    container_name: xmog-frontend
 
     volumes:
       - ./public:/usr/src/app/public
