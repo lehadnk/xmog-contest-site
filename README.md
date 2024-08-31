@@ -1,3 +1,12 @@
+# Docker
+
+#### In src/Client.js specify a valid backend URL
+
+`docker-compose down && docker-compose up -d`
+
+
+## Garbage below
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

@@ -43,7 +43,7 @@ class Participant extends Component {
                 </div>
 
                 <Typography gutterBottom variant="headline" component="h2">
-                    {this.props.participant.name}
+                    {this.props.participant.name} - {this.props.participant.realm}
                 </Typography>
 
                 <CardContent>

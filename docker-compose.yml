@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: transmog-frontend
+
+    volumes:
+      - ./public:/usr/src/app/public
+      - ./src:/usr/src/app/src
+      - ./package.json:/usr/src/app/package.json
+      - ./package-lock.json:/usr/src/app/package-lock.json
+      - site-frontend-node-modules:/usr/src/app/node_modules
+      - site-frontend-build:/usr/src/app/build
+
+    ports:
+      - "3000:3000"
+
+    command: ["npm", "start"]
+
+
+volumes:
+  site-frontend-node-modules:
+  site-frontend-build:
+
