@@ -46,23 +46,27 @@ class Participant extends Component {
                     {this.props.participant.name} - {this.props.participant.realm}
                 </Typography>
 
-                <CardContent>
-                    <ExpansionPanel onChange={() => {this.expand()}} >
-                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                            <Typography>Проголосовали ({this.props.participant.votes})</Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
+                {this.props.participant.votes !== null &&
+                    <CardContent>
+                        <ExpansionPanel onChange={() => {this.expand()}} >
+                            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                <Typography>Проголосовали ({this.props.participant.votes})</Typography>
+                            </ExpansionPanelSummary>
+                            <ExpansionPanelDetails>
 
-                            <List dense={true}>
-                                {this.state.voters.map(voter => (
-                                    <ListItem>
-                                        <ListItemText primary={<Typography type="body2" style={{ color: voter.disqualified ? '#FF0000' : '#000000' }}>{voter.voter_discord_name}</Typography>} disableTypography />
-                                    </ListItem>
-                                ))}
-                            </List>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                </CardContent>
+                                <List dense={true}>
+                                    {this.state.voters.map(voter => (
+                                        <ListItem>
+                                            <ListItemText primary={<Typography type="body2" style={{ color: voter.disqualified ? '#FF0000' : '#000000' }}>{voter.voter_discord_name}</Typography>} disableTypography />
+                                        </ListItem>
+                                    ))}
+                                </List>
+                            </ExpansionPanelDetails>
+                        </ExpansionPanel>
+                    </CardContent>
+                }
+
+
             </Card>
         );
     }
