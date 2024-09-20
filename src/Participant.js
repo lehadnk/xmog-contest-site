@@ -8,6 +8,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Client from './Client';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
+import {Button} from "material-ui";
 
 class Participant extends Component {
     constructor(props) {
@@ -33,6 +34,15 @@ class Participant extends Component {
             });
     }
 
+    copyToClipboard = () => {
+        const textToCopy = `${this.props.participant.name} - ${this.props.participant.realm}`;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            alert('Copied to clipboard!');
+        }).catch((err) => {
+            console.error('Failed to copy: ', err);
+        });
+    };
+
     render() {
         return (
             <Card>
@@ -44,6 +54,9 @@ class Participant extends Component {
 
                 <Typography gutterBottom variant="headline" component="h2">
                     {this.props.participant.name} - {this.props.participant.realm}
+                    <Button variant="outlined" size="small" onClick={this.copyToClipboard} style={{ marginLeft: '10px' }}>
+                        cp
+                    </Button>
                 </Typography>
 
                 {this.props.participant.votes !== null &&
