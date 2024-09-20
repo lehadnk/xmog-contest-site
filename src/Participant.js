@@ -61,6 +61,8 @@ class Participant extends Component {
                 }
             } catch (err) {
                 console.error('Fallback: Unable to copy', err);
+            } finally {
+                document.body.removeChild(textArea);
             }
         }
 
