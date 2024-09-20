@@ -36,10 +36,34 @@ class Participant extends Component {
 
     copyToClipboard = () => {
         const textToCopy = `${this.props.participant.name} - ${this.props.participant.realm}`;
-        navigator.clipboard.writeText(textToCopy).then(() => {
-        }).catch((err) => {
-            console.error('Failed to copy: ', err);
-        });
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(textToCopy).then(() => {
+            }).catch((err) => {
+                console.error('Failed to copy: ', err);
+            });
+        } else {
+            const textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
+
+            // Ensure the text area is not visible and not selectable
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = 0;
+            textArea.style.left = '-9999px';
+
+            document.body.appendChild(textArea);
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                } else {
+                    console.error('Fallback: Copy command was unsuccessful');
+                }
+            } catch (err) {
+                console.error('Fallback: Unable to copy', err);
+            }
+        }
+
     };
 
     render() {
