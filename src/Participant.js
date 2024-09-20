@@ -37,7 +37,6 @@ class Participant extends Component {
     copyToClipboard = () => {
         const textToCopy = `${this.props.participant.name} - ${this.props.participant.realm}`;
         navigator.clipboard.writeText(textToCopy).then(() => {
-            alert('Copied to clipboard!');
         }).catch((err) => {
             console.error('Failed to copy: ', err);
         });
@@ -54,8 +53,8 @@ class Participant extends Component {
 
                 <Typography gutterBottom variant="headline" component="h2">
                     {this.props.participant.name} - {this.props.participant.realm}
-                    <Button variant="outlined" size="small" onClick={this.copyToClipboard} style={{ marginLeft: '10px' }}>
-                        cp
+                    <Button variant="outlined" size="small" onClick={this.copyToClipboard} style={{padding: '5px', minWidth: "auto"}}>
+                        <i className="fa-regular fa-copy fa-lg" style={{color: "grey"}}></i>
                     </Button>
                 </Typography>
 
