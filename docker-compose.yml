@@ -18,6 +18,9 @@ services:
     ports:
       - "3000:3000"
 
+    networks:
+      - shared
+
     command: sh -c "npm install && npm run build && serve -s build"
 
 
@@ -25,3 +28,6 @@ volumes:
   site-frontend-node-modules:
   site-frontend-build:
 
+networks:
+  shared:
+    external: true
